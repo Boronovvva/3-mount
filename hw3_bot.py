@@ -6,7 +6,6 @@ from datetime import datetime
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
-import logging
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 bot = Bot(token=token)
@@ -103,7 +102,7 @@ async def start(message: types.Message):
 );""")
         connect.commit()
 
-    await message.answer("""Здравствуйте , вас приветсвует компания 'Amanat_bank' благодарим вас что выбрали именно нашу компанию.Пожалуйста чтобы в дальшем продолжить сотрудничество нажмите кнопку РЕГИСТРАЦИЯ  |
+    await message.answer("""Здравствуйте , вас приветсвует компания 'Amanat_bank' благодарим вас что выбрали именно нашу компанию.Пожалуйста чтобы в дальнейшем продолжить сотрудничество нажмите кнопку РЕГИСТРАЦИЯ  |
                                                                                               V
                           """, reply_markup = key_buttons)
     await message.answer(f"Ваш номер счета: {message.from_user.id}\nНикнейм: {message.from_user.username}")
